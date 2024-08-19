@@ -12,7 +12,7 @@ public class Ogre extends Enemy {
 
     @Override
     public void attackBack(Hero hero) {
-        if (Utils.superPowerReady()) {
+        if (Utils.isSuperPowerReady()) {
             System.out.println(this.name + " attacked " + hero.getName() + " back and used his super power! -10 extra HP from " + hero.getName() + "!");
             hero.takeDamage(this.damage + 10, this);
             return;

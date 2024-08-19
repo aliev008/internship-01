@@ -19,7 +19,7 @@ public class Archer extends Hero {
                 return;
             }
 
-            if (Utils.superPowerReady()) {
+            if (Utils.isSuperPowerReady()) {
                 System.out.println(this.name + " attacked " + enemy.getName() + " and used his super power! -10 extra HP from " + enemy.getName() + "!");
                 enemy.takeDamage(this.damage + 10, this);
                 return;

@@ -18,7 +18,7 @@ public class Mage extends Hero {
                 System.out.println(enemy.getName() + " is already dead! No need to attack him.");
                 return;
             }
-            if (Utils.superPowerReady()) {
+            if (Utils.isSuperPowerReady()) {
                 System.out.println(this.name + " attacked " + enemy.getName() + " and used his super power! " + this.name + " took soul from " + enemy.getName() + "!");
                 enemy.takeDamage(enemy.getHealth(), this);
                 return;
