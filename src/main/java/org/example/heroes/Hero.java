@@ -38,7 +38,7 @@ public abstract class Hero implements Mortal {
                 System.out.println(enemy.getName() + " is already dead! No need to attack him.");
                 return;
             }
-            if (Utils.isSuperPowerReady() && this instanceof Superpowered) {
+            if (this instanceof Superpowered && Utils.isSuperPowerReady()) {
 
                 // Use of the abstract method in the Template Method
                 useSuperPower(enemy);
