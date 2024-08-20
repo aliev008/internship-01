@@ -20,7 +20,7 @@ public class TrainingGround {
         Enemy vampire = new Vampire("Vampire 1");
 
         for (int i = 0; i < 10; i++) {
-            mage.attackEnemy(ogre);
+            mage.attackEnemy(vampire);
 //            mage.attackEnemy(ogre);
 //            archer.attackEnemy(vampire);
         }

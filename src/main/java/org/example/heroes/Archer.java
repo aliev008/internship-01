@@ -1,32 +1,25 @@
 package org.example.heroes;
 
 import org.example.enemies.Enemy;
-import org.example.utils.Utils;
+import org.example.interfaces.Superpowered;
 
-public class Archer extends Hero {
+public class Archer extends Hero implements Superpowered {
+
+    private static final int DAMAGE = 30;
+    private static final int HEALTH = 100;
+    private static final int SUPER_POWER_EXTRA_DAMAGE = 10;
 
     public Archer(String name) {
-        super(name);
-        this.damage = 30;
-        this.health = 100;
+        super(name, DAMAGE, HEALTH);
     }
 
     @Override
-    public void attackEnemy(Enemy enemy) {
-        if (this.isAlive()) {
-            if (!enemy.isAlive()) {
-                System.out.println(enemy.getName() + " is already dead! No need to attack him.");
-                return;
-            }
+    public void useSuperPower(Enemy enemy) {
+        int totalDamage = this.damage + SUPER_POWER_EXTRA_DAMAGE;
 
-            if (Utils.isSuperPowerReady()) {
-                System.out.println(this.name + " attacked " + enemy.getName() + " and used his super power! -10 extra HP from " + enemy.getName() + "!");
-                enemy.takeDamage(this.damage + 10, this);
-                return;
-            }
-            super.attackEnemy(enemy);
-        } else {
-            System.out.println(this.getName() + " is dead! He cannot attack.");
-        }
+        System.out.printf("%s attacked %s and used his super power! -10 extra HP from %s!%n",
+                this.name, enemy.getName(), enemy.getName());
+
+        enemy.takeDamage(totalDamage, this);
     }
 }

@@ -1,23 +1,25 @@
 package org.example.enemies;
 
 import org.example.heroes.Hero;
-import org.example.utils.Utils;
+import org.example.interfaces.Superpowered;
 
-public class Ogre extends Enemy {
+public class Ogre extends Enemy implements Superpowered {
+
+    private static final int DAMAGE = 20;
+    private static final int HEALTH = 200;
+    private static final int SUPER_POWER_EXTRA_DAMAGE = 10;
+
     public Ogre(String name) {
-        super(name);
-        this.health = 200;
-        this.damage = 20;
+        super(name, DAMAGE, HEALTH);
     }
 
     @Override
-    public void attackBack(Hero hero) {
-        if (Utils.isSuperPowerReady()) {
-            System.out.println(this.name + " attacked " + hero.getName() + " back and used his super power! -10 extra HP from " + hero.getName() + "!");
-            hero.takeDamage(this.damage + 10, this);
-            return;
-        }
-        System.out.println(this.name + " attacked " + hero.getName() + " back!");
-        hero.takeDamage(this.damage, this);
+    public void useSuperPower(Hero hero) {
+        int totalDamage = this.damage + SUPER_POWER_EXTRA_DAMAGE;
+
+        System.out.println(this.name + " attacked " + hero.getName() + " back and used his super power! -10 extra HP from " + hero.getName() + "!");
+
+        hero.takeDamage(totalDamage, this);
+
     }
 }

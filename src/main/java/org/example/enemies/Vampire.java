@@ -1,28 +1,21 @@
 package org.example.enemies;
 
 import org.example.heroes.Hero;
+import org.example.interfaces.Superpowered;
 
-public class Vampire extends Enemy {
+public class Vampire extends Enemy implements Superpowered {
+
+    private static final int DAMAGE = 15;
+    private static final int HEALTH = 100;
+    private static final int SUPER_POWER_EXTRA_HEALTH = 5;
+
     public Vampire(String name) {
-        super(name);
-        this.health = 100;
-        this.damage = 15;
+        super(name, DAMAGE, HEALTH);
     }
 
     @Override
-    public void takeDamage(int damage, Hero hero) {
-        this.health -= damage;
-        if (isAlive()) {
-            System.out.println(this.name + " health after " + hero.getName() + " attack is: " + this.getHealth());
-            attackBack(hero);
-            return;
-        }
-        System.out.println(this.name + " died!");
-    }
-
-    @Override
-    public void attackBack(Hero hero) {
-        this.health += 5;
+    public void useSuperPower(Hero hero) {
+        this.health += SUPER_POWER_EXTRA_HEALTH;
         System.out.println(this.name + " attacked " + hero.getName() + " back! The blood of the " + hero.getName() + " gave to Vampire +5 HP and now is " + this.health + "!");
         hero.takeDamage(this.damage, this);
     }
