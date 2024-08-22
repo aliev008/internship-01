@@ -1,8 +1,6 @@
 package org.example.heroes;
 
 import org.example.enemies.Enemy;
-import org.example.interfaces.Superpowered;
-import org.example.utils.Utils;
 
 public class Mage extends Hero {
 

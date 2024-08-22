@@ -2,7 +2,6 @@ package org.example.heroes;
 
 import org.example.enemies.Enemy;
 import org.example.interfaces.Mortal;
-import org.example.interfaces.Superpowered;
 import org.example.utils.Utils;
 
 public abstract class Hero implements Mortal {

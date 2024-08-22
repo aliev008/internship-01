@@ -1,7 +1,6 @@
 package org.example.enemies;
 
 import org.example.heroes.Hero;
-import org.example.interfaces.Superpowered;
 
 public class Ogre extends Enemy {
 
