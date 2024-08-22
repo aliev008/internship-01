@@ -43,7 +43,7 @@ public abstract class Enemy implements Mortal {
 
     // Template Method
     public void attackBack(Hero hero) {
-        if (this instanceof Superpowered && Utils.isSuperPowerReady()) {
+        if (Utils.isSuperPowerReady()) {
 
             // Use of the abstract method in the Template Method
             useSuperPower(hero);
