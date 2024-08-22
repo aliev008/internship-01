@@ -4,7 +4,7 @@ import org.example.enemies.Enemy;
 import org.example.interfaces.Superpowered;
 import org.example.utils.Utils;
 
-public class Mage extends Hero implements Superpowered {
+public class Mage extends Hero {
 
     private static final int DAMAGE = 20;
     private static final int HEALTH = 100;

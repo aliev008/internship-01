@@ -3,7 +3,7 @@ package org.example.heroes;
 import org.example.enemies.Enemy;
 import org.example.interfaces.Superpowered;
 
-public class Archer extends Hero implements Superpowered {
+public class Archer extends Hero {
 
     private static final int DAMAGE = 30;
     private static final int HEALTH = 100;
